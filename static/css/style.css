@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px 20px; /* Consistent padding for both buttons */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid #ccc; /* Light border for all buttons */
+    margin: 10px 0; /* Vertical margin between the buttons */
+}
+
+button[type="submit"] {
+    background-color: #81C784; /* Light green background before hover */
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.reset-btn {
+    background-color: red; /* Red background for reset */
+    color: white;
+    border: none; /* No border for reset button */
+}
+
+.reset-btn:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+/* Optional: Style for spacing between submit and reset button */
+form button:first-child {
+    margin-right: 10px; /* Add space to the right of the submit button */
+}

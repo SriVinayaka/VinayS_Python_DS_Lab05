@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Selling Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        // Function to clear the dynamic content when the Reset button is clicked
+        function clearDynamicContent() {
+            // Clear the dynamic content inside the div with id 'dynamic-content'
+            document.getElementById('dynamic-content').innerHTML = '';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Vehicle Selling Price Prediction</h2>
+        <form action="/predict" method="POST" onreset="clearDynamicContent()"> <!-- Call clearDynamicContent() on reset -->
+            <label for="CarName">Car Name:</label>
+            <input type="text" id="CarName" name="CarName" required><br><br>
+
+            <label for="Kms_Driven">Kms Driven:</label>
+            <input type="number" id="Kms_Driven" name="Kms_Driven" required><br><br>
+
+            <label for="age_of_the_car">Age of the Car (in years):</label>
+            <input type="number" id="age_of_the_car" name="age_of_the_car" required><br><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset" class="reset-btn">Clear</button> <!-- Reset button -->
+        </form>
+        <center>
+            <div id="dynamic-content">
+                {% if prediction_text %}
+                    <h3>Input Values:</h3>
+                    <p><strong>Car Name:</strong> {{ car_name }}</p>
+                    <p><strong>Kms Driven:</strong> {{ kms_driven }}</p>
+                    <p><strong>Age of the Car:</strong> {{ age_of_the_car }} years</p>
+
+                    <h3>{{ prediction_text }}</h3>
+                {% endif %}
+            </div>
+        </center>
+    </div>
+</body>
+</html>
